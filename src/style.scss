@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.strips {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  background: #ddd;
+  
+  .bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 3vw;
+    right: 3vw;
+    background: repeating-linear-gradient(90deg, white 0vw, white 1vw, black 1vw, black 2vw);
+    transition: opacity 2s;
+    
+    &:hover {
+      opacity: 0;
+    }
+  }
+
+  
+  .dark, .light {
+    width: 6vw;
+    height: 5vh;
+    animation: move 15s linear infinite alternate;
+  }
+  
+  .dark {
+    background: navy;
+  }
+  
+  .light {
+    background: yellow;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(84vw);
+  }
+}

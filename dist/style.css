@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.strips {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  background: #ddd;
+}
+
+.strips .bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3vw;
+  right: 3vw;
+  background: repeating-linear-gradient(90deg, white 0vw, white 1vw, black 1vw, black 2vw);
+  transition: opacity 2s;
+}
+
+.strips .bg:hover {
+  opacity: 0;
+}
+
+.strips .dark, .strips .light {
+  width: 6vw;
+  height: 5vh;
+  -webkit-animation: move 15s linear infinite alternate;
+          animation: move 15s linear infinite alternate;
+}
+
+.strips .dark {
+  background: navy;
+}
+
+.strips .light {
+  background: yellow;
+}
+
+@-webkit-keyframes move {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(84vw);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(84vw);
+  }
+}
